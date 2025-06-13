@@ -1,15 +1,14 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: system-ui, Arial, Helvetica, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +19,75 @@
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, #f0f7fa 0%, #e0e7ef 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Cairo', Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cairo', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input, textarea, select {
+  border-radius: 0.75rem;
+  border: 1px solid #cbd5e1;
+  transition: box-shadow 0.2s, border 0.2s;
+  outline: none;
+  font-size: 1.1rem;
+  padding: 0.8rem 1.2rem;
+  background: #f8fafc;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px #60a5fa44;
+  background: #fff;
+}
+
+button, .btn {
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 10px 0 #2563eb13;
+}
+button:hover, .btn:hover {
+  background: linear-gradient(90deg, #2563eb 0%, #1e40af 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 24px 0 #2563eb29;
+}
+
+.card, .rounded-xl {
+  box-shadow: 0 4px 32px 0 #1e293b13;
+  border-radius: 1.25rem;
+  background: #fff;
+  transition: box-shadow 0.25s, transform 0.15s;
+}
+.card:hover, .rounded-xl:hover {
+  box-shadow: 0 8px 40px 0 #2563eb22;
+  transform: translateY(-2px) scale(1.02);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #e0e7ef;
+}
+::-webkit-scrollbar-thumb {
+  background: #b6c8e9;
+  border-radius: 8px;
+}
+
+@media (max-width: 640px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.5rem; }
+  .container { padding: 0 1rem; }
 }
