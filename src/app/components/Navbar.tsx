@@ -11,6 +11,7 @@ export default function Navbar() {
         <Link href="/account" className="px-5 py-2 rounded-lg font-semibold text-blue-700 hover:bg-blue-100 transition-colors">حجوزاتي</Link>
         <Link href="/account" className="px-5 py-2 rounded-lg font-semibold text-blue-700 hover:bg-blue-100 transition-colors">حسابي</Link>
         <Link href="/booking" className="px-5 py-2 rounded-lg font-semibold text-blue-700 hover:bg-blue-100 transition-colors">حجز سيارة جديدة</Link>
+        <Link href="/auth/login" className="px-5 py-2 bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-900 transition-colors">تسجيل الدخول</Link>
       </div>
     </nav>
   );

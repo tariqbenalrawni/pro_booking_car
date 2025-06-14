@@ -1,9 +1,27 @@
 import { PrismaClient } from '@prisma/client';
+import bcrypt from 'bcryptjs';
 const prisma = new PrismaClient();
 
 async function main() {
+  // حذف البيانات القديمة
+  await prisma.user.deleteMany();
   await prisma.car.deleteMany();
   await prisma.$executeRaw`DELETE FROM sqlite_sequence WHERE name='Car'`;
+  await prisma.$executeRaw`DELETE FROM sqlite_sequence WHERE name='User'`;
+
+  // إضافة المستخدم
+  const hashedPassword = await bcrypt.hash('123456', 10);
+  await prisma.user.create({
+    data: {
+      name: 'Tariq',
+      email: 'tariq@gmail.com',
+      password: hashedPassword,
+      phone: '',
+      licenseNumber: ''
+    }
+  });
+
+  // إضافة السيارات
   await prisma.car.createMany({
     data: [
       {
