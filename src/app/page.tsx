@@ -52,12 +52,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-8">
           {/* زر حجز سيارة جديدة */}
           <div className="flex justify-end mb-8">
-            <Link
-              href="/booking"
-              className="inline-flex items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              حجز سيارة جديدة
-            </Link>
+            
           </div>
         </div>
         <div className="container mx-auto px-4 py-8">

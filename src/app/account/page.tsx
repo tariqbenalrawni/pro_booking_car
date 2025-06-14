@@ -52,12 +52,12 @@ export default function Account() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
-        <button
-          onClick={() => window.history.back()}
-          className="mb-6 px-6 py-2 bg-blue-100 text-blue-700 rounded-lg font-semibold shadow-sm hover:bg-blue-200 transition-colors"
+        <Link
+          href="/"
+          className="mb-6 px-6 py-2 bg-blue-100 text-blue-700 rounded-lg font-semibold shadow-sm hover:bg-blue-200 transition-colors flex items-center"
         >
-          ← العودة للصفحة السابقة
-        </button>
+          ← العودة للصفحة الرئيسية
+        </Link>
         <div className="bg-white rounded-xl shadow-lg p-6">
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-3xl font-bold text-gray-900">حسابي</h1>

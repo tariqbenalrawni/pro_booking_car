@@ -1,4 +1,4 @@
-import { Car } from '../models/car';
+import { Car } from '@/models/car';
 
 export class CarService {
   private static instance: CarService;
