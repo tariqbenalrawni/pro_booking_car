@@ -13,6 +13,16 @@ declare module "next-auth" {
       image?: string;
     }
   }
+  interface User {
+    id: string;
+    name: string;
+    email: string;
+    password: string;
+    phone: string;
+    licenseNumber: string;
+    createdAt: Date;
+    updatedAt: Date;
+  }
 }
 
 declare module "next-auth/jwt" {
@@ -57,7 +67,10 @@ export const authOptions: NextAuthOptions = {
           throw new Error("Password is incorrect");
         }
 
-        return user;
+        return {
+          ...user,
+          id: user.id.toString()
+        };
       }
     })
   ],
